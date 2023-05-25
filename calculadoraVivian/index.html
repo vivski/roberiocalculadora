@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Calculadora Vivian</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculadora">
+    <form class="calculator" name="calc">
+        <div class="card">
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <!-- <input type="text" name="display" class="numero" id="resultado"> -->
+        <div id="caixaResultado">
+        <output type="text" id="resultado">
+        </div>
+
+        </div>
+
+<div>
+        <input type="button" value="/"     onclick="divisao()">
+        <input type="button" value="*"     onclick="multiplicacao()">
+        <input type="button" value="Primo" onclick="numeroPrimo()">
+</div>
+
+<div>
+    <input type="button" value="-" onclick="subtracao()">
+    <input type="button" value="+" onclick="adicao()">
+    <input type="button" value="!" onclick="fatorial()"> 
+    <input type="button" value="√" onclick="raizQuadrada()">
+    <input type="button" value="^" onclick="exponenciacao()">
+    <input type="button" value="Ímpar/Par" class="ip" onclick="imparPar()">
+
+</div>
+<div>
+    <input type="button" value="DE" onclick="clear()" class="igual">
+
+</div>
+</form>
+<script src="script.js"></script>
+</div>
+</div>
+</body>
+</html>
