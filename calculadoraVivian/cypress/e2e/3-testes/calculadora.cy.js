@@ -165,8 +165,7 @@ describe('testando função raiz', () => {
 
   it('raiz de 80', () => {
     cy.get('#num1').type('80')
-    cy.get('[value="√"]')
-    .click()
+    cy.get('[value="√"]').click()
     cy.get('#resultado').should('have.text', '8.94')
   })
 
@@ -244,30 +243,30 @@ describe('testando função número primo', () => {
   it('7 é primo?', () => {
     cy.get('#num1').type('7')
     cy.get('[value="Primo"]').click()
-    cy.get('#resultado').should('have.text', '7 É primo')
+    cy.get('#resultado').should('have.text', 'true')
   })
 
   it('0 é primo?', () => {
-    cy.get('#num3').type('0')
+    cy.get('#num1').type('0')
     cy.get('[value="Primo"]').click()
-    cy.get('#resultado').should('have.text', 'Não é primo')
+    cy.get('#resultado').should('have.text', 'false')
   })
 
   it('2 é primo?', () => {
-    cy.get('#num3').type('2')
+    cy.get('#num1').type('2')
     cy.get('[value="Primo"]').click()
-    cy.get('#resultado').should('have.text', 'É primo')
+    cy.get('#resultado').should('have.text', 'true')
   })
 
   it('1 é primo?', () => {
-    cy.get('#num3').type('0')
+    cy.get('#num1').type('1')
     cy.get('[value="Primo"]').click()
-    cy.get('#resultado').should('have.text', 'Não é primo')
+    cy.get('#resultado').should('have.text', 'false')
   })
 
   it('3 é primo?', () => {
-    cy.get('#num3').type('3')
+    cy.get('#num1').type('3')
     cy.get('[value="Primo"]').click()
-    cy.get('#resultado').should('have.text', 'É primo')
+    cy.get('#resultado').should('have.text', 'true')
   })
 })

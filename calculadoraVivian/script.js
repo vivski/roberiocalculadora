@@ -42,9 +42,9 @@ function numeroPrimo() {
     }
   }
   if (divisores === 2) {
-    document.getElementById('resultado').innerHTML = num1 + ' É Primo'
+    document.getElementById('resultado').innerHTML = true
   } else {
-    document.getElementById('resultado').innerHTML = num1 + ' Não é primo'
+    document.getElementById('resultado').innerHTML = false
   }
 }
 
