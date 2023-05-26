@@ -1,9 +1,9 @@
 // RAIZ QUADRADA
 
 function raizQuadrada() {
-  const num1 = parseInt(document.getElementById('num1').value)
+  const num1 = parseFloat(document.getElementById('num1').value)
 
-  let raiz = Math.sqrt(num1)
+  let raiz = Math.sqrt(num1).toFixed(2)
 
   document.getElementById('resultado').textContent = raiz
 }
