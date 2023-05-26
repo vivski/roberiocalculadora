@@ -116,3 +116,81 @@ describe('testando função exponenciação', () => {
     cy.get('#resultado').should('have.text', '4')
   })
 })
+
+describe('testando função subtração', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:5500/calculadoraVivian/index.html')
+  })
+
+  it('subtração de 5 - 3', () => {
+    cy.get('#num1').type('5')
+    cy.get('#num2').type('3')
+    cy.get('[value="-"]').click()
+    cy.get('#resultado').should('have.text', '2')
+  })
+
+  it('subtração de 30 -40', () => {
+    cy.get('#num1').type('30')
+    cy.get('#num2').type('40')
+    cy.get('[value="-"]').click()
+    cy.get('#resultado').should('have.text', '-10')
+  })
+
+  it('subtração de 6 -6', () => {
+    cy.get('#num1').type('6')
+    cy.get('#num2').type('6')
+    cy.get('[value="-"]').click()
+    cy.get('#resultado').should('have.text', '0')
+  })
+
+  it('subtração de -150 -10', () => {
+    cy.get('#num1').type('-150')
+    cy.get('#num2').type('10')
+    cy.get('[value="-"]').click()
+    cy.get('#resultado').should('have.text', '-160')
+  })
+
+  it('subtração de -30 -40', () => {
+    cy.get('#num1').type('-30')
+    cy.get('#num2').type('40')
+    cy.get('[value="-"]').click()
+    cy.get('#resultado').should('have.text', '-70')
+  })
+})
+
+describe('testando função raiz', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:5500/calculadoraVivian/index.html')
+  })
+
+  it('raiz de 80', () => {
+    cy.get('#num1').type('80')
+    cy.get('[value="√"]')
+    .click()
+    cy.get('#resultado').should('have.text', '8.94')
+  })
+
+  it('raiz de 9', () => {
+    cy.get('#num1').type('9')
+    cy.get('[value="√"]').click()
+    cy.get('#resultado').should('have.text', '3.00')
+  })
+
+  it('raiz de 20', () => {
+    cy.get('#num1').type('20')
+    cy.get('[value="√"]').click()
+    cy.get('#resultado').should('have.text', '4.47')
+  })
+
+  it('raiz de 2000', () => {
+    cy.get('#num1').type('2000')
+    cy.get('[value="√"]').click()
+    cy.get('#resultado').should('have.text', '44.72')
+  })
+
+  it('raiz de 169', () => {
+    cy.get('#num1').type('169')
+    cy.get('[value="√"]').click()
+    cy.get('#resultado').should('have.text', '13.00')
+  })
+})
