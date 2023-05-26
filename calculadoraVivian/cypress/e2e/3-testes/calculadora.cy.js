@@ -194,3 +194,80 @@ describe('testando função raiz', () => {
     cy.get('#resultado').should('have.text', '13.00')
   })
 })
+
+describe('testando função multiplicação', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:5500/calculadoraVivian/index.html')
+  })
+
+  it('multiplicar de 20 * 40', () => {
+    cy.get('#num1').type('20')
+    cy.get('#num2').type('40')
+    cy.get('[value="*"]').click()
+    cy.get('#resultado').should('have.text', '800')
+  })
+
+  it('multiplicar de 2*(-2)', () => {
+    cy.get('#num1').type('2')
+    cy.get('#num2').type('-2')
+    cy.get('[value="*"]').click()
+    cy.get('#resultado').should('have.text', '-4')
+  })
+
+  it('multiplicar de 0*40', () => {
+    cy.get('#num1').type('0')
+    cy.get('#num2').type('40')
+    cy.get('[value="*"]').click()
+    cy.get('#resultado').should('have.text', '0')
+  })
+
+  it('multiplicar de 1*30', () => {
+    cy.get('#num1').type('1')
+    cy.get('#num2').type('30')
+    cy.get('[value="*"]').click()
+    cy.get('#resultado').should('have.text', '30')
+  })
+
+  it('multiplicar de -30 *40', () => {
+    cy.get('#num1').type('-30')
+    cy.get('#num2').type('40')
+    cy.get('[value="*"]').click()
+    cy.get('#resultado').should('have.text', '-1200')
+  })
+})
+
+describe('testando função número primo', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:5500/calculadoraVivian/index.html')
+  })
+
+  it('7 é primo?', () => {
+    cy.get('#num1').type('7')
+    cy.get('[value="Primo"]').click()
+    cy.get('#resultado').should('have.text', '7 É primo')
+  })
+
+  it('0 é primo?', () => {
+    cy.get('#num3').type('0')
+    cy.get('[value="Primo"]').click()
+    cy.get('#resultado').should('have.text', 'Não é primo')
+  })
+
+  it('2 é primo?', () => {
+    cy.get('#num3').type('2')
+    cy.get('[value="Primo"]').click()
+    cy.get('#resultado').should('have.text', 'É primo')
+  })
+
+  it('1 é primo?', () => {
+    cy.get('#num3').type('0')
+    cy.get('[value="Primo"]').click()
+    cy.get('#resultado').should('have.text', 'Não é primo')
+  })
+
+  it('3 é primo?', () => {
+    cy.get('#num3').type('3')
+    cy.get('[value="Primo"]').click()
+    cy.get('#resultado').should('have.text', 'É primo')
+  })
+})
