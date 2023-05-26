@@ -270,3 +270,41 @@ describe('testando função número primo', () => {
     cy.get('#resultado').should('have.text', 'true')
   })
 })
+
+
+
+describe('testando função ímpar/Par', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:5500/calculadoraVivian/index.html')
+  })
+
+  it('é par 2', () => {
+    cy.get('#num1').type('2')
+    cy.get('.ip').click()
+    cy.get('#resultado').should('have.text', 'true')
+  })
+
+  it('é par 3', () => {
+    cy.get('#num1').type('3')
+    cy.get('.ip').click()
+    cy.get('#resultado').should('have.text', 'false')
+  })
+
+  it('é par 7', () => {
+    cy.get('#num1').type('7')
+    cy.get('.ip').click()
+    cy.get('#resultado').should('have.text', 'false')
+  })
+
+  it('é par 11', () => {
+    cy.get('#num1').type('11')
+    cy.get('.ip').click()
+    cy.get('#resultado').should('have.text', 'false')
+  })
+
+  it('é par 13', () => {
+    cy.get('#num1').type('13')
+    cy.get('.ip').click()
+    cy.get('#resultado').should('have.text', 'false')
+  })
+})

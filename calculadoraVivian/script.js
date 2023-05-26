@@ -24,9 +24,9 @@ function imparPar() {
   const num1 = parseInt(document.getElementById('num1').value)
 
   if (num1 % 2 === 0) {
-    document.getElementById('resultado').innerHTML = num1 + ' É par'
+    document.getElementById('resultado').innerHTML = true
   } else {
-    document.getElementById('resultado').innerHTML = num1 + ' É ímpar'
+    document.getElementById('resultado').innerHTML = false
   }
 }
 
